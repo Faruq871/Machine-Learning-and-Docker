@@ -4,7 +4,7 @@ A production-ready **MNIST digit classification API** built with **FastAPI**, **
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 - [Overview](#overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
@@ -19,7 +19,7 @@ A production-ready **MNIST digit classification API** built with **FastAPI**, **
 
 ---
 
-## 🧠 Overview
+##  Overview
 
 This project implements a **Random Forest classifier** trained on the MNIST dataset (70,000 handwritten digits). The trained model is exposed via a **RESTful API** built with FastAPI, allowing users to send image pixel data (784 integers) and receive digit predictions with confidence scores.
 
@@ -27,18 +27,18 @@ The entire application can be run locally or inside a **Docker container**, maki
 
 ---
 
-## ✨ Features
+##  Features
 
-- ✅ **Multi-class classification** (digits 0–9) with ~97% accuracy  
-- ✅ **FastAPI** endpoints with automatic interactive documentation (`/docs`)  
-- ✅ **Input validation** (expects exactly 784 pixel values)  
-- ✅ **Probability scores** for each class in the response  
-- ✅ **Dockerized** for consistent deployment across environments  
-- ✅ **Scaler serialization** – preprocessing pipeline saved and reloaded  
+-  **Multi-class classification** (digits 0–9) with ~97% accuracy  
+-  **FastAPI** endpoints with automatic interactive documentation (`/docs`)  
+-  **Input validation** (expects exactly 784 pixel values)  
+-  **Probability scores** for each class in the response  
+-  **Dockerized** for consistent deployment across environments  
+-  **Scaler serialization** – preprocessing pipeline saved and reloaded  
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component          | Technology                          |
 |--------------------|-------------------------------------|
@@ -52,7 +52,7 @@ The entire application can be run locally or inside a **Docker container**, maki
 
 ---
 
-## 📦 Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
@@ -62,12 +62,12 @@ Before you begin, ensure you have the following installed:
 
 ---
 
-## 🔧 Installation & Setup
+## Installation & Setup
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Faruq871/Machine-Learning---Classification-with-Docker-
-   cd Machine-Learning---Classification-with-Docker-
+   git clone https://github.com/Faruq871/Machine-Learning-and-Docker
+   cd Machine-Learning-and-Docker-
    ```
 
 2. **Create a virtual environment (optional but recommended)**
@@ -83,7 +83,7 @@ Before you begin, ensure you have the following installed:
 
 ---
 
-## 🏋️ Training the Model
+## Training the Model
 
 Run the training script to download MNIST, train the Random Forest classifier, and save the model + scaler.
 
@@ -93,18 +93,18 @@ py src/train.py
 
 **Expected output:**
 ```
-✅ Accuracy: 0.9704
-✅ F1-Score (macro): 0.9701
-📊 Confusion Matrix saved as 'confusion_matrix.png'
-💾 Model saved to 'models/mnist_model.pkl'
-💾 Scaler saved to 'models/scaler.pkl'
+ Accuracy: 0.9704
+ F1-Score (macro): 0.9701
+ Confusion Matrix saved as 'confusion_matrix.png'
+ Model saved to 'models/mnist_model.pkl'
+ Scaler saved to 'models/scaler.pkl'
 ```
 
 > **Note:** The model file (`mnist_model.pkl`) is ~137 MB and is **not** included in the repository. It is generated locally during training and ignored by Git.
 
 ---
 
-## 🚀 Running the API Locally
+##  Running the API Locally
 
 Start the FastAPI server with Uvicorn:
 
@@ -113,14 +113,14 @@ uvicorn src.api:app --reload
 ```
 
 The API will be available at:  
-👉 **http://localhost:8000**
+**http://localhost:8000**
 
 Interactive API documentation (Swagger UI) is available at:  
-👉 **http://localhost:8000/docs**
+**http://localhost:8000/docs**
 
 ---
 
-## 🧪 Testing the API
+## Testing the API
 
 You can test the API using the provided test script:
 
@@ -148,19 +148,19 @@ curl -X POST http://localhost:8000/predict \
 
 ---
 
-## 🐳 Running with Docker
+## Running with Docker
 
-### 1️⃣ Build the Docker image
+### Build the Docker image
 ```bash
 docker build -t mnist-api .
 ```
 
-### 2️⃣ Run the container
+### Run the container
 ```bash
 docker run -p 8000:8000 mnist-api
 ```
 
-### 3️⃣ Test inside the container
+###  Test inside the container
 Open another terminal and run:
 ```bash
 py src/main.py
@@ -170,13 +170,10 @@ You should see the same `Status: 200` response, confirming the API is working in
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 proyek_ml/
-├── models/                     # Saved model and scaler (ignored by Git)
-│   ├── mnist_model.pkl
-│   └── scaler.pkl
 ├── src/
 │   ├── api.py                  # FastAPI app
 │   ├── main.py                 # Test client
@@ -190,20 +187,20 @@ proyek_ml/
 
 ---
 
-## 📄 License
+##  License
 
 This project is for educational purposes. Feel free to use and modify it.
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Faruq**  
 GitHub: [@Faruq871](https://github.com/Faruq871)
 
 ---
 
-## 🙌 Acknowledgments
+## Acknowledgments
 
 - [MNIST dataset](http://yann.lecun.com/exdb/mnist/) – Yann LeCun, Corinna Cortes, Christopher J.C. Burges  
 - Built with guidance from Aurélien Géron's *Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow*
