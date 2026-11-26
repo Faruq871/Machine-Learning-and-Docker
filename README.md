@@ -1,4 +1,4 @@
-# MNIST Digit Classifier API with FastAPI and Docker
+# MNIST Dataset with FastAPI and Docker
 
 A production-ready **MNIST digit classification API** built with **FastAPI**, **scikit-learn**, and containerized with **Docker**. This project demonstrates a complete MLOps pipeline: model training, API development, and containerization.
 
